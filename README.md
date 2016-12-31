@@ -1,1 +1,1 @@
-# slate [![Travis](https://img.shields.io/travis/rightlag/slate.svg?style=flat-square)](https://travis-ci.org/rightlag/slate)
+# slate [![Travis](https://img.shields.io/travis/rightlag/slate.svg?style=flat-square)](https://travis-ci.org/rightlag/slate) [![CircleCI](https://img.shields.io/circleci/project/github/rightlag/slate.svg?style=flat-square)](https://circleci.com/gh/rightlag/slate)
