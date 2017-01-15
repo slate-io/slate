@@ -1,7 +1,4 @@
 language: go
-before_install:
-  - cp ~/.netrc ~
-  - chmod 600 .netrc
 install:
   - go get github.com/rightlag/go-swagger-object-model
 script: go test -v ./...
