@@ -10,7 +10,6 @@ import (
 )
 
 func LoadSchema(u *url.URL) (*models.Schema, error) {
-	var schema models.Schema
 	response, err := http.Get(u.String())
 	if err != nil {
 		return nil, err
@@ -20,6 +19,7 @@ func LoadSchema(u *url.URL) (*models.Schema, error) {
 	if err != nil {
 		return nil, err
 	}
+	var schema models.Schema
 	json.Unmarshal(specification, &schema)
 	if err != nil {
 		return nil, err
