@@ -1,11 +1,16 @@
-package main
+package spec
 
 import (
+	"net/url"
 	"testing"
 )
 
 func TestSwaggerSchemaInitialization(t *testing.T) {
-	schema, err := load("http://petstore.swagger.io/v2/swagger.json")
+	u, err := url.Parse("http://petstore.swagger.io/v2/swagger.json")
+	if err != nil {
+		t.Error(err)
+	}
+	schema, err := LoadSchema(u)
 	if err != nil {
 		t.Error(err)
 	}
