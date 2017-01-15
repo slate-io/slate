@@ -1,7 +1,10 @@
 language: go
-script: go test -v ./...
+before_install:
+  - cp .netrc ~
+  - chmod 600 .netrc
 install:
   - go get github.com/rightlag/go-swagger-object-model
+script: go test -v ./...
 notifications:
   slack:
     secure: VJ2Dcr54N9VHUrUGaw8nRnaPko/o2U0cBK+zbMsDtKKiJ0/hMgD1kvnXcMcVWTXVdOAFzeDqKC9xGeuyD8ScZ9RLGlSWQGuF12igDpA4OBbhzhcsvFCfdf6oEhc1/Dd9FRU+KiXbF/UDm9l0rRSjNYRPRttM21KA0MNaoMdo4ONeGOwf1UKhJXLLX1qfeYecQCAwGftlCyLTHkQSWt/VIu6ZFCS4CMKN70b6w9JXcKUZeFU3iUG+KwHOtvwwxb8fEkF4XdN5Q+kcNGLBOQYk4ONoAvWLgGGy2hK2KW6LorhOMBdELDyMD/EFq+0DRk+RPeJ7euTzN7xDI4D8vmc0joehc12ky1/1gEy00spYR9wcajFofBEcHB4TnOaFyxQq/Y+T3m6J8906KGVsUxoIzSjf1/mr8vU8k7daprKS2AXu9ZGgkZ0p0txrXQFIY0zerBWYbtzlbydO3/EPflCCPFazJSv93qR/rpNy/W7XgqZhYrlsHA7u1zlbgHH5eeZ7/7B0u/gZm1ugFKCeanLpKvZJz0eiNwrVYgT4iPoETAn9vydhEV2l5FTns08Hes6IJjPmgS5ltjH1UfBX2aTlp6C7EMMtMlZNYmrX0uCMIpDPlijfpoajxGDhZARpGfGT5yopqo9ih7FKhkNmEx6KB7T8D1M8rRp9S2jqxjt/+kA=
