@@ -85,5 +85,5 @@ func (c *Command) execute() (*Response, error) {
 }
 
 func (r *Response) String() string {
-	return string(r.stdout)
+	return r.stdout
 }
