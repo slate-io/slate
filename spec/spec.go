@@ -20,8 +20,7 @@ func LoadSchema(u *url.URL) (*models.Schema, error) {
 		return nil, err
 	}
 	var schema models.Schema
-	json.Unmarshal(specification, &schema)
-	if err != nil {
+	if err := json.Unmarshal(specification, &schema); err != nil {
 		return nil, err
 	}
 	return &schema, nil
