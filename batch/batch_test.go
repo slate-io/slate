@@ -1,6 +1,7 @@
 package batch
 
 import (
+	"fmt"
 	"github.com/rightlag/slate/command"
 	"testing"
 )
