@@ -14,7 +14,7 @@ func TestCommandBatch(t *testing.T) {
 		t.Error()
 	}
 	// If `nil` is the second argument to `NewCommand`,
-	// then the command is ignored.
+	// then the command is NOT ignored.
 	if b.List()[0].Ignore() {
 		t.Error()
 	}
