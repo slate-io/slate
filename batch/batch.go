@@ -20,22 +20,23 @@ func (b *BatchCommand) Add(v interface{}) {
 		for _, c := range t {
 			b.commands = append(b.commands, c)
 		}
-	case string:
-		b.commands = append(b.commands, command.NewCommand(t))
-	case []string:
-		for _, s := range t {
-			b.commands = append(b.commands, command.NewCommand(s))
-		}
 	default:
 		return
 	}
 }
 
-func (b *BatchCommand) execute() error {
+func (b *BatchCommand) Length() int {
+	return len(b.commands)
+}
+
+func (b *BatchCommand) List() []*command.Command {
+	return b.commands
+}
+
+func (b *BatchCommand) Execute() {
 	for _, c := range b.commands {
 		if err := c.Execute(); err != nil {
-			return err
+			continue
 		}
 	}
-	return nil
 }
