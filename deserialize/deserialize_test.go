@@ -27,11 +27,11 @@ func TestDeserialize(t *testing.T) {
 
 	reg := schema.Paths["/show ip interface"].Get.Responses.Schema.Pattern
 	d := deserialize(mockIpBrief, reg)
-    fmt.Printf("%#v", d)
+	fmt.Printf("%#v", d)
 	if len(d) != 4 {
 		t.Error("Length is not 4")
 	}
-    if d[0].Protocol !== 'up' {
-        t.Error("Protocol does not match")
-    }
+	if d[0].Protocol !== 'up' {
+		t.Error("Protocol does not match")
+	}
 }
